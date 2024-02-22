@@ -10,9 +10,8 @@ let inventarios = [
 
 let usuarios = [
     {id: 1, nombre: 'admin', contraseña: 'admin'},
-    {id: 2, nombre: '', contraseña: ''},
-    {id: 3, nombre: '', contraseña: ''},
-    {id: 4, nombre: '', contraseña: ''}
+    {id: 2, nombre: 'Panque', contraseña: 'cupcake'},
+    {id: 3, nombre: 'Segundo', contraseña: 'Waza'},
 ];
 
 function getAllInv() {
