@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const todoRoutes = require('./rutas/InvRoutes');
-const authMiddleware = require('./middleware/authMiddleware');
+const authMiddleware = require('./Middleware/authMiddleware');
 const authUtils = require('./Middleware/authUtils');
 
 const app = express();
