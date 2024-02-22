@@ -8,13 +8,23 @@ let inventarios = [
     { id: 5, nombre: 'Inv5', descripcion: 'Desc5', cantidad: 80, precio: 25 }
 ];
 
+let usuarios = [
+    {id: 1, nombre: 'admin', contraseña: 'admin'},
+    {id: 2, nombre: '', contraseña: ''},
+    {id: 3, nombre: '', contraseña: ''},
+    {id: 4, nombre: '', contraseña: ''}
+];
+
 function getAllInv() {
     return inventarios;
 }
 
 function createInv(nombre, descripcion, cantidad, precio) {
+    const lastInv = inventarios[inventarios.length -1];
+    const lastId = lastInv.id;
+
     const newInv = {
-        id: inventarios.length + 1,
+        id: lastId +1,
         nombre,
         descripcion,
         precio: parseFloat(precio),
