@@ -8,12 +8,6 @@ let inventarios = [
     { id: 5, nombre: 'Inv5', descripcion: 'Desc5', cantidad: 80, precio: 25 }
 ];
 
-let usuarios = [
-    {id: 1, nombre: 'admin', contraseña: 'admin'},
-    {id: 2, nombre: 'Panque', contraseña: 'cupcake'},
-    {id: 3, nombre: 'Segundo', contraseña: 'Waza'},
-];
-
 function getAllInv() {
     return inventarios;
 }

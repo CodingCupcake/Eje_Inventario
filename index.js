@@ -7,13 +7,21 @@ const authUtils = require('./Middleware/authUtils');
 const app = express();
 app.use(bodyParser.json());
 
-app.post('/login', (req, res) =>{
-    const username = req.body.username;
-    const password = req.body.password;
-    //const {username, password} = req.body
+let usuarios = [
+    {id: 1, nombre: 'admin', contraseña: 'admin'},
+    {id: 2, nombre: 'Panque', contraseña: 'cupcake'},
+    {id: 3, nombre: 'Segundo', contraseña: 'Waza'},
+];
 
-    if(username === 'admin' && password === 'admin'){
-        const token = authUtils.generateToken({id: 1, username: username});
+app.post('/login', (req, res) =>{
+    //const username = req.body.username;
+    //const password = req.body.password;
+    const {username, password} = req.body
+
+    const userF = usuarios.find(user => user.nombre === username && user.contraseña === password)
+
+    if(userF){
+        const token = authUtils.generateToken({id: userF.id, username: userF.username});
         res.json({token});
     }else{
         res.json(401).json({error: "Unauthorized"});
